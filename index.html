@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/estilos.css" type="text/css">
+    <script src="assets/js/bibliotaca.js" defer></script>
+    <script src="assets/js/usuarios.js" defer></script>
+    <script src="assets/js/js.js" defer></script>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="cabezal" class="clearfix">
+            <img id="logo" src="https://p1.develotion.com/2021_08/truck.png" alt="logo">
+
+            <ul id="navPrincipal">
+                <li class="btnSeccion admin" id="btnHailitarDesabilitarEmpresa" style="display: none;">
+                    <a>Habilitar y deshabilitar empresas</a>
+                </li>
+                <li class="btnSeccion admin" id="btnCrearVehiculos" style="display: none;">
+                    <a>Crear tipo de vehiculos</a>
+                </li>
+                <li class="btnSeccion admin" id="btnEstadisticasAdmin" style="display: none;">
+                    <a>Informacion estadistica</a>
+                </li>
+                <li class="btnSeccion persona" id="btnSolicitudEnvio" style="display: none;">
+                    <a>Solicitud de envio</a>
+                </li>
+                <li class="btnSeccion persona" id="btnListaEnvios" style="display: none;">
+                    <a>Lista de envios</a>
+                </li>
+                <li class="btnSeccion persona" id="btnEstadisticasPersona" style="display: none;">
+                    <a>Informacion estadistica</a>
+                </li>
+                <li class="btnSeccion empresa" id="btnSolicitudesPendientes" style="display: none;">
+                    <a>Solicitudes Pendientes</a>
+                </li>
+                <li class="btnSeccion empresa" id="btnSolicitudesTomadas" style="display: none;">
+                    <a>Solicitudes tomadas</a>
+                </li>
+                <li class="btnSeccion empresa" id="btnEstadisticasEmpresa" style="display: none;">
+                    <a>Informacion estadistica</a>
+                </li>
+
+            </ul>
+            <div id="aux" style="display: none;">
+                <a>Cueta</a> | <a>Cerrar Seccion</a>
+            </div><!-- FIN AUX -->
+
+        </div><!-- FIN CABEZAL -->
+
+        <div id="contenido">
+
+            <!-- Login y registro -->
+
+            <section class="index" id="seccionLogin">
+
+
+                <form>
+                    <fieldset>
+                        <h1>Login</h1>
+                        <label for='txtUsuario'>Usuario:</label>
+                        <input type='text' id='txtUsuario'><br>
+                        <label for='txtPass'>Contraseña:</label>
+                        <input type='text' id='txtPass'><br>
+                        <label for='slc'></label>
+                        <select id='slc'>
+                            <option value='logAdmin'>Admin</option>
+                            <optgroup label="Usuarios">
+                                <option value='logPersona'>Persona</option>
+                                <option value='logEmpresa'>Empresa</option>
+                            </optgroup>
+                        </select><br>
+                        <input type="button" id="btnIniciarSesion" value="Iniciar sesion">
+                        <p id="pMensajeError"></p>
+                    </fieldset>
+                </form>
+                <br>
+
+                <label for="btnRegistro">No estas registrado? crea una cuenta</label><br>
+                <input type="button" value="Registrarse" id="btnRegistrarse"><br>
+
+            </section>
+
+            <section class="index" id="seccionRegistro" style="display: none;">
+                <h1>Registro de usuario:</h1>
+
+            </section>
+
+            <!--Interfas Administrador-->
+
+            <section class="seccion administrador" id="hailitarDesabilitarEmpresa">
+                <h1>Habilitar y deshabilitar empresas</h1>
+
+            </section>
+
+            <section class="seccion administrador" id="crearVehiculos">
+
+            </section>
+
+            <section class="seccion administrador" id="estadisticasAdmin">
+
+            </section>
+
+            <!--Interfas Persona-->
+
+            <section class="seccion persona" id="solicitudEnvio">
+
+            </section>
+
+            <section class="seccion persona" id="listaEnvios">
+
+            </section>
+
+            <section class="seccion persona" id="estadisticasPersona">
+
+            </section>
+
+             <!--Interfas Empresa-->
+
+            <section class="seccion empresa" id="solicitudesPendientes">
+
+            </section>
+
+            <section class="seccion empresa" id="solicitudesTomadas">
+
+            </section>
+
+            <section class="seccion empresa" id="estadisticasEmpresa">
+
+            </section>
+
+           
+
+
+
+
+
+
+
+
+
+
+            <!--FIN EJERCICIOS-->
+        </div><!-- FIN CONTENIDO -->
+        <div id="pie">
+            <a href="https://www.ort.edu.uy">Footer</a>
+        </div><!-- FIN PIE -->
+    </div><!-- FIN CONTENEDOR -->
+</body>
+
+</html>
