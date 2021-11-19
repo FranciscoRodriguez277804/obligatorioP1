@@ -5,142 +5,325 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="author" content="Gabriel Toledo, Ronaldo Tabarez, Francisco Rodriguez | Fecha:18/11/2012 20:12">
+    <title>Obligatorio</title>
     <link rel="stylesheet" href="assets/css/estilos.css" type="text/css">
-    <script src="assets/js/bibliotaca.js" defer></script>
     <script src="assets/js/usuarios.js" defer></script>
+    <script src="assets/js/bibliotaca.js" defer></script>
     <script src="assets/js/js.js" defer></script>
 </head>
 
 <body>
     <div id="contenedor">
         <div id="cabezal" class="clearfix">
-            <img id="logo" src="https://p1.develotion.com/2021_08/truck.png" alt="logo">
+            <a href="index.html"><img id="logo" src="https://p1.develotion.com/2021_08/truck.png" alt="logo"></a>
 
             <ul id="navPrincipal">
-                <li class="btnSeccion admin" id="btnHailitarDesabilitarEmpresa" style="display: none;">
+                <li id="itemHabilitarEmpresas" class="menu-item admin">
                     <a>Habilitar y deshabilitar empresas</a>
                 </li>
-                <li class="btnSeccion admin" id="btnCrearVehiculos" style="display: none;">
+                <li id="itemCrearVehiculos" class="menu-item admin">
                     <a>Crear tipo de vehiculos</a>
                 </li>
-                <li class="btnSeccion admin" id="btnEstadisticasAdmin" style="display: none;">
+                <li id="itemInfoEstadisticaAdmin" class="menu-item admin">
                     <a>Informacion estadistica</a>
                 </li>
-                <li class="btnSeccion persona" id="btnSolicitudEnvio" style="display: none;">
+                <li id="itemSolicitudEnvio" class="menu-item persona">
                     <a>Solicitud de envio</a>
                 </li>
-                <li class="btnSeccion persona" id="btnListaEnvios" style="display: none;">
+                <li id="itemListaEnvios" class="menu-item persona">
                     <a>Lista de envios</a>
                 </li>
-                <li class="btnSeccion persona" id="btnEstadisticasPersona" style="display: none;">
+                <li id="itemInfoEstadistica" class="menu-item persona">
                     <a>Informacion estadistica</a>
                 </li>
-                <li class="btnSeccion empresa" id="btnSolicitudesPendientes" style="display: none;">
+                <li id="itemSolicitudesPendientes" class="menu-item empresa">
                     <a>Solicitudes Pendientes</a>
                 </li>
-                <li class="btnSeccion empresa" id="btnSolicitudesTomadas" style="display: none;">
+                <li id="itemSolicitudesTomadas" class="menu-item empresa">
                     <a>Solicitudes tomadas</a>
                 </li>
-                <li class="btnSeccion empresa" id="btnEstadisticasEmpresa" style="display: none;">
+                <li id="itemInfoEstadistcaEmpresa" class="menu-item empresa">
                     <a>Informacion estadistica</a>
                 </li>
 
             </ul>
-            <div id="aux" style="display: none;">
-                <a>Cueta</a> | <a>Cerrar Seccion</a>
+            <div id="aux">
+                <a id="linkUsuarioConectado"></a> | <a id="linkCerrarSeccion">Cerrar Seccion</a>
             </div><!-- FIN AUX -->
 
         </div><!-- FIN CABEZAL -->
 
         <div id="contenido">
 
+            <section class="seccion Bienvenida" id="seccionBienvenida">
+
+
+                <p id="pMensaje"></p>
+
+            </section>
+
             <!-- Login y registro -->
 
-            <section class="index" id="seccionLogin">
-
+            <section class="seccion Login" id="seccionLogin">
+                <!-- + LOGIN + -->
 
                 <form>
                     <fieldset>
                         <h1>Login</h1>
-                        <label for='txtUsuario'>Usuario:</label>
-                        <input type='text' id='txtUsuario'><br>
-                        <label for='txtPass'>Contraseña:</label>
-                        <input type='text' id='txtPass'><br>
-                        <label for='slc'></label>
-                        <select id='slc'>
-                            <option value='logAdmin'>Admin</option>
+                        <label for='txtIngresoUsuario'>Usuario:</label>
+                        <input type='text' id='txtIngresoUsuario'><br>
+                        <label for='txtIngresoPass'>Contraseña:</label>
+                        <input type='text' id='txtIngresoPass'><br>
+                        <label for='slcIngresoUsuarios'></label>
+                        <select id='slcIngresoUsuarios'>
+                            <option value='logIngresoAdmin'>Admin</option>
                             <optgroup label="Usuarios">
-                                <option value='logPersona'>Persona</option>
-                                <option value='logEmpresa'>Empresa</option>
+                                <option value='logIngresoPersona'>Persona</option>
+                                <option value='logIngresoEmpresa'>Empresa</option>
                             </optgroup>
                         </select><br>
                         <input type="button" id="btnIniciarSesion" value="Iniciar sesion">
                         <p id="pMensajeError"></p>
+                        <p id="pMensajeHabilitacion"></p>
                     </fieldset>
                 </form>
                 <br>
-
-                <label for="btnRegistro">No estas registrado? crea una cuenta</label><br>
                 <input type="button" value="Registrarse" id="btnRegistrarse"><br>
 
+                <label for="btnSeccionRegistro">No estas registrado? crea una cuenta</label><br>
+                <input type="button" value="Registrate!" id="btnSeccionRegistro">
             </section>
 
-            <section class="index" id="seccionRegistro" style="display: none;">
-                <h1>Registro de usuario:</h1>
+            <section class="seccion registro" id="seccionRegistro">
+                <!------------ + REGISTRO + ---------------->
+                <h1>Registro de usuario</h1>
 
+                <label for='slcUsuario'>Seleccion tipo de usuario:</label>
+                <select id='slcUsuarios'>
+                    <option value='logPersona'>Persona</option>
+                    <option value='logEmpresa'>Empresa</option>
+                </select><br><br>
+                <div id="divRegistro">
+                    <label for='txtRut' id='lblRut'>RUT:</label>
+                    <input type='text' id='txtRut' title="Ingrese RUT"><br><br>
+
+                    <label for='txtRazonSocial' id='lblRazonSocial'>Razon social:</label>
+                    <input type='text' id='txtRazonSocial' title="Ingrese Razon social"><br><br>
+
+                    <label for='txtNombre' id="lblNombre ">Nombre:</label>
+                    <input type='text' id='txtNombre' title="Ingrese Nombre"><br><br>
+
+                    <label for='txtUsuario'>Usuario:</label>
+                    <input type='text' id='txtUsuario' title="Ingrese usuario"><br><br>
+
+                    <label for='txtPass'>Contraseña:</label>
+                    <input type='text' id='txtPass' title="Ingrese contraseña"><br><br>
+
+                    <label for='txtDocumento' id='lblDocumeto'>Documento:</label>
+                    <input type='text' id='txtDocumento' title="Ingrese documento"><br><br>
+
+                    <label for='txtApellido' id='lblApellido'>Apellido:</label>
+                    <input type='text' id='txtApellido' title="Ingrese Apellido"><br><br>
+
+                    <label for='slcVehiculo' id='lblRegistroVehiculo'>seleccionar vehiculo ...</label>
+                    <select id='slcVehiculo'>
+
+                    </select><br><br>
+                </div>
+                <input type="button" value="Registrarse" id="btnFormularioRegistro">
+
+                <input type="button" id="btnVolverLogin" value="Volver">
+                <p id="pResultado"></p>
             </section>
 
-            <!--Interfas Administrador-->
 
-            <section class="seccion administrador" id="hailitarDesabilitarEmpresa">
+
+            <!----------------Interfas Administrador--------------------->
+
+            <section class="seccion administrador" id="seccionHabilitarDesabilitarEmpresa">
+
                 <h1>Habilitar y deshabilitar empresas</h1>
 
-            </section>
+                <label for='txtBusqueda'>Buscar empresa:</label>
+                <input type='text' id='txtBusqueda'>
 
-            <section class="seccion administrador" id="crearVehiculos">
+                <input type="button" id="btnBuscarEmpresa" value="Buscar">
 
-            </section>
+                <p id="pMensaje"></p>
 
-            <section class="seccion administrador" id="estadisticasAdmin">
 
-            </section>
 
-            <!--Interfas Persona-->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>RUT</th>
+                            <th>Razon social</th>
+                            <th>Nombre Fantasia</th>
+                            <th>Estado</th>
+                            <th>Habilitar Empresa</th>
+                        </tr>
+                    </thead>
+                    <tbody id='tblHablitarEmpresas'>
+                    </tbody>
+                </table> <br>
 
-            <section class="seccion persona" id="solicitudEnvio">
 
-            </section>
 
-            <section class="seccion persona" id="listaEnvios">
-
-            </section>
-
-            <section class="seccion persona" id="estadisticasPersona">
-
-            </section>
-
-             <!--Interfas Empresa-->
-
-            <section class="seccion empresa" id="solicitudesPendientes">
-
-            </section>
-
-            <section class="seccion empresa" id="solicitudesTomadas">
 
             </section>
 
-            <section class="seccion empresa" id="estadisticasEmpresa">
+            <section class="seccion administrador" id="seccionCrearVehiculos">
+                <h1>Crear tipo de Vehiculos</h1>
+
+                <label for='txtNombreVehiculo'>Nombre:</label>
+                <input type='text' id='txtNombreVehiculo'><br>
+                <label for='txtCrearVehiculo'>Tipo de Vehiculo</label>
+                <input id='text' id="txtCrearVehiculo">
+                <br>
+                <input type="button" id="btnCrearVehiculo" value="Crear Vehiculo"><br><br>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id:</th>
+                            <th>Tipo:</th>
+                            <th>Nombre:</th>
+                        </tr>
+                    </thead>
+                    <tbody id='tblCrearVehiculos'>
+                    </tbody>
+                </table> <br>
 
             </section>
 
-           
+            <section class="seccion administrador" id="seccionEstadisticasAdmin">
+                <h1>Informacion Estadistica</h1>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Empresa:</th>
+                            <th>Kilometros:</th>
+                        </tr>
+                    </thead>
+                    <tbody id='tblInformacionEstadistica'>
+                    </tbody>
+                </table> <br>
+
+            </section>
+
+            <!-------Interfas Persona---------->
+
+            <section class="seccion persona" id="seccionSolicitudEnvio">
+                <h1>Que desea Enviar?</h1>
+                <label for='slcTipoVehiculo'>En que Trasportara su mercaderia?</label>
+                <select id='slcTipoVehiculo'>   
+                </select><br>
+                <label for='txtKilometros'>Cuantas Distancia en Kilometros:</label>
+                <input type='text' id='txtKilometros'><br>
+                <label for='txtComentario'>Comentarios:</label>
+                <input type='text' id='txtComentario'><br>
+                <label for="fileImagenMercaderia"> Suba una foto de su mercaderia:</label>
+                <input type="file" accept="image/png" id="fileImagenMercaderia"><br>
+                <p id="pMensajeSolicitud"></p>
+
+                <input type="button" value="Agergar Solicitud" id="btnAgregarSolicitud">
+
+
+            </section>
+
+            <section class="seccion persona" id="seccionListaEnvios">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Estado</th>
+                            <th>Empresa Asociada</th>
+                            <th>Comentarios</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id='tblEnvios'>
+                    </tbody>
+                </table> <br>
+
+            </section>
+
+            <section class="seccion persona" id="seccionEstadisticasPersona">
+                <h1>Informacion estadistica</h1>
+
+                <p id="pPorcentaje"></p>
+                <p id="pCantidadEnviosPendiente"></p>
+                <p id="pCantidadEnviosTransito"></p>
+                <p id="pCantidadEnviosFinalizada"></p>
 
 
 
 
 
+            </section>
 
+            <!--------Interfas Empresa------>
+
+            <section class="seccion empresa" id="seccionSolicitudesPendientes">
+
+                <h1>Solicitudes pendientes</h1>
+
+                <div class="contendioSolicitudesPendientes"></div>
+
+                <p id="msgExitoso"></p>
+
+
+
+            </section>
+
+            <section class="seccion empresa" id="seccionSolicitudesTomadas">
+                <h1>Listado de solicitudes tomadas</h1>
+                <!--FINALIZAR PEDIDOS--->
+                <div id="divFinalizarPedido">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Foto:</th>
+                                <th>Distancia:</th>
+                                <th>Nombre:</th>
+                                <th>Apellido:</th>
+                                <th>Estado:</th>
+                            </tr>
+                        </thead>
+                        <tbody id='tblSolicitudesTomadas'>
+                        </tbody>
+                    </table> <br>
+
+                    <label for='slcFinalizarPedido'>Seleccione pedido al cual quiere finalizar</label>
+                    <select id='slcFinalizarPedido'>
+
+                    </select><br>
+                    <input type="button" id="btnFinalizar" value="Finalizar">
+                </div>
+                <p id="pMensajeFinalizar"></p>
+            </section>
+
+
+            <section class="seccion empresa" id="seccionEstadisticasEmpresa">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre:</th>
+                            <th>Numero de traslados:</th>
+                        </tr>
+                    </thead>
+                    <tbody id='datosTabla'>
+                    </tbody>
+                </table> <br>
+
+                <p id="pREsultadoS"></p>
+
+
+            </section>
 
 
 

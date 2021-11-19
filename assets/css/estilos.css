@@ -190,3 +190,17 @@ input[type="button"] {
   text-decoration: none;
   color: #fff;
 }
+
+table,td,th{
+  border: solid 1px black;
+  border-collapse: separate;
+  border-style: dashed;
+}
+
+#navPrincipal a:hover{
+  color: #C1FF9B
+}
+
+#linkCerrarSeccion:hover{
+  color: red
+}
